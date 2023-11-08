@@ -59,9 +59,9 @@ this.setState({
 }
 
 filterByName = () => {
-const {filter, contacts} = this.state
-const normalized = filter.toLowerCase()
-return contacts.filter(({name}) => name.toLowerCase().includes(normalized))
+const {filter, contacts} = this.state;
+const normalized = filter.toLowerCase();
+return contacts.filter(({name}) => name.toLowerCase().includes(normalized));
 }
 
 deleteContact = (contactId) => {
@@ -76,7 +76,7 @@ deleteContact = (contactId) => {
 
   render() {
     const {filter} = this.state
-const filteredContacts = this.filterByName()
+const filteredContacts = this.filterByName();
 
 
     return (
