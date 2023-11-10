@@ -4,6 +4,15 @@ import ContactForm from "./ContactForm/ContactForm";
 import { ContactList } from "./ContactsList/ContactsList";
 import { Filter } from "./Filter/Filter";
 import { MainWrapper } from "components/App.styled";
+
+
+
+
+
+
+
+
+
 export class App  extends Component  {
   state= {
     contacts: [
