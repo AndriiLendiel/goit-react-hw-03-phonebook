@@ -25,11 +25,14 @@ export class App  extends Component  {
   }
 
   componentDidMount() {
-const contacts = JSON.parse(localStorage.getItem('contacts')) 
+const contacts = JSON.parse(localStorage.getItem('contacts')) ;
+console.log(contacts);
+if(contacts) {
+  this.setState({
+    contacts,
+  })
+}
 
-this.setState({
-  contacts: contacts
-})
 
   }
 
@@ -70,8 +73,9 @@ this.setState({
 filterByName = () => {
 const {filter, contacts} = this.state;
 const normalized = filter.toLowerCase();
-return contacts.filter(({name}) => name.toLowerCase().includes(normalized));
+return contacts.filter(({name}) => name.toLocaleLowerCase().includes(normalized));
 }
+
 
 deleteContact = (contactId) => {
   this.setState(prevState => ({
@@ -86,6 +90,7 @@ deleteContact = (contactId) => {
   render() {
     const {filter} = this.state
 const filteredContacts = this.filterByName();
+
 
 
     return (
